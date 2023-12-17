@@ -10,9 +10,11 @@ This repo follows Brad travercy's php course on udemy. Each file in this repo is
 
 The project requires xampp(or Laragon) to run php on the local system
 
-### Clone the website using
+Configure and start the apache and mysql when running
+
+### Clone the repo using
 ```npm
-git clone 
+git clone git@github.com:sonukuldeep/php_course.git
 ```
 
 ### In the browser open
