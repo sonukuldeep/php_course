@@ -1,5 +1,14 @@
 <?php
-
+// this is a comment
+/*
+This is multiline comment
+line one 
+line two
+line three
+*/
+echo "hello world ", "whats up";
+echo "<br/>";
+print "Hello world print how are you";
 ?>
 
 <!DOCTYPE html>
