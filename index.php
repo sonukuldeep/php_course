@@ -1,63 +1,38 @@
 <?php
 $output = null;
 
-$num1 = 10;
-$num2 = 20;
+$string = 'hello World';
 
-// Basic math
-$output = "$num1 + $num2 = " . $num1 + $num2;
-$output = "$num1 - $num2 = " . $num1 - $num2;
-$output = "$num1 * $num2 = " . $num1 * $num2;
-$output = "$num1 / $num2 = " . $num1 / $num2;
-$output = "$num1 % $num2 = " . $num1 % $num2;
+// string length
+$output = strlen($string);
 
-// Assignment operators
-$num3 = 10;
+// word count
+$output = str_word_count($string);
 
-$num3 += 10;
-$num3 -= 10;
-$num3 *= 2;
-$num3 /= 2;
-$num3 %= 2;
+// string position
+$output = strpos($string, 'world');
 
-$output = $num3;
+// get specific character at index
+$output = $string[4];
 
-// Built in php function
+// sub string
+$output = substr($string, 6, 5);
 
-// random numbers
-$output = rand();
-$output = getrandmax();
-$output = rand(1, 10); // both 1 & 10 included
+// replace string
+$output = str_replace('world', 'hell', $string);
 
-// round
-$output = round(3.14);
-$output = round(3.14, 1);
+// string to lower
+$output = strtolower($string);
 
-// ceil
-$output = ceil(3.14); // outputs 4
+// string upper
+$output = strtoupper($string);
 
-// floot
-$output = floor(3.14); // outputs 3
+// uc words-- pascal case
+$output = ucwords($string);
 
-// square root
-$output = sqrt(2024);
+// trim
+$output = trim('         ' . $string . '              ');
 
-// pi
-$output = pi();
-
-// absolute
-$output = abs(-20);
-
-// max
-$output = max(1, 2, 3, 4, 5); // outputs 5
-$output = max([1, 10, 20, 50, 30]); // works on array too
-
-// min
-$output = min(1, 2, 3, 4, 5); // outputs 5
-$output = min([1, 10, 20, 50, 30]); // works on array too
-
-// number formatter
-$output = number_format(1000.120031, 2); // outputs 1,000.12
 ?>
 
 <!DOCTYPE html>
