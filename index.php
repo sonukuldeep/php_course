@@ -1,21 +1,73 @@
 <?php
+$output = null;
 
-$names = array(["Johhny", "Ruby", "David"]);
-$numbers = [10, 11, 12, 13, 14, 15];
-var_dump($names);
+$ids = [10, 50, 100, 20, 11, 12, 13, 40];
+$users = ["Johnny", "Jack", "Jill"];
 
-function inspect($values)
-{
-    echo '<pre>';
-    var_dump($values);
-    echo '</pre>';
-}
+// count
+$output = count($ids);
 
-$numbers[0] = 100;
+// sort
+sort($ids);
+sort($users);
 
-unset($numbers[1]);
+// rsort
+rsort($ids);
+rsort($users);
 
-$numbers = array_values($numbers);
+// array_push
+array_push($ids, 55); // $ids[] = 70;
+array_push($users, "Sunny");
 
-//inspect($names);
-inspect($numbers);
+// array_pop
+array_pop($ids);
+array_pop($users);
+
+// array_shift
+array_shift($ids);
+
+// array_unshift
+array_unshift($users, "Peter");
+
+// array_slice
+$slice = array_slice($ids, 1, 2);
+var_dump($slice);
+
+// array_splice
+array_splice($ids, 2, 1, 1000);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title><?php echo "Learn PHP From Scratch" ?></title>
+</head>
+
+<body class="bg-gray-100">
+    <!-- this is header section -->
+    <header class="bg-blue-500 text-white p-4">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-semibold"><?php echo "Learn PHP From Scratch" ?></h1>
+        </div>
+    </header>
+    <div class="container mx-auto p-4 mt-4">
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <!-- output -->
+            <p class="text-xl"><?= $output ?></p>
+            <h2 class="text-xl font-semibold my-4">IDs Array</h2>
+            <p>
+            <pre><?= print_r($ids); ?></pre>
+            </p>
+            <h2 class="text-xl font-semibold my-4">Users Array</h2>
+            <p>
+            <pre><?= print_r($users); ?></pre>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
