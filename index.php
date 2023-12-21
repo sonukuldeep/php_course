@@ -35,6 +35,8 @@ var_dump($slice);
 
 // array_splice
 array_splice($ids, 2, 1, 1000);
+
+
 ?>
 
 <!DOCTYPE html>
