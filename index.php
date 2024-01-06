@@ -1,19 +1,28 @@
 <?php
 $output = null;
-$user = [
-    'name' => 'John',
-    'email' => 'john@gmail.com',
-    'passwd' => '123456',
-    'hobbies' => ['Tennis', 'video games']
+$fruit = [
+    ["banana", "apple"],
+    ["grapes", "vine"],
+    ["pamagranade", "cucumber"],
 ];
 
-$output = $user['name'];
-$output = $user['email'];
-$output = $user['hobbies'][0];
+$fruit[] = ["orange", "pea"];
 
-$user['address'] = '123 Main St';
+$users = [
+    ['name' => 'mike', 'email' => 'mike@gmail.com', 'password' => 123456],
+    ['name' => 'john', 'email' => 'john@gmail.com', 'password' => 123456],
+    ['name' => 'sofie', 'email' => 'sofie@gmail.com', 'password' => 123456],
+];
 
-unset($user['address']);
+$users[] = ['name' => 'peter', 'email' => 'peter@gmail.com', 'password' => 123456];
+
+$output = $users[3]['name'];
+
+array_pop($users);
+
+array_push($users, ['name' => 'spongebob', 'email' => 'squarepants@gmail.com', 'password' => 123456]);
+
+unset($users[2]);
 
 ?>
 
@@ -37,11 +46,9 @@ unset($user['address']);
     <div class="container mx-auto p-4 mt-4">
         <div class="bg-white rounded-lg shadow-md p-6">
             <h2 class="text-lg font-semibold my-4"><?= "Output: $output" ?></h2>
-            <h2 class="text-xl font-semibold my-4">User Array:</h2>
             <p>
-            <pre>
-                    <?= print_r($user) ?>
-                </pre>
+            <pre><?= print_r($users) ?></pre>
+            <pre><?= print_r($fruit) ?></pre>
             </p>
         </div>
     </div>
