@@ -7,6 +7,17 @@ for ($i = 0; $i < 5; $i++) {
     }
     echo "<br/>";
 }
+
+// while
+$i = 0;
+while ($i < 10) {
+    $j = 0;
+    while ($j < 5) {
+        echo "$i - $j";
+        $j++;
+    }
+    $i++;
+}
 ?>
 
 <!DOCTYPE html>
