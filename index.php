@@ -1,8 +1,12 @@
 <?php
 
-$age = 2;
-if ($age >= 18) {
-    echo "You are eligible to vote";
+// control flow
+// if and if else
+$age = 21;
+if ($age >= 21) {
+    echo "You can legally get married now.";
+} else if ($age >= 18) {
+    echo "You are old enough to consume alcohol.";
 } else {
-    echo "You are not old enough to vote";
+    echo "You are too young to vote or get married.";
 }
