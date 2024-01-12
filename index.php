@@ -1,24 +1,26 @@
 <?php
 
-declare(strict_types=1);
-
-function add(int $a, int $b): int
+class User
 {
-    return $a + $b;
+    public $name;
+    public $email;
+
+    public function __construct($name, $email)
+    {
+        $this->name = $name;
+        $this->email = $email;
+    }
+
+    public function login()
+    {
+        echo "User logged in!";
+    }
 }
 
-function greet(string $name): void
-{
-    echo "hello $name <br/>";
-}
+$user1 = new User("kuldeep", "kuldeep@gmail.com");
+$user2 = new User("kuldeep kumar", "kumar@gmail.com");
 
-function greetFullName(string $fName, string $lname): string
-{
-    return 'Hello Mr. ' . $fName . ' ' . $lname . '<br/>';
-}
 
-greet("kuldeep");
-
-echo greetFullName(lname: 'kumar', fName: "kuldeep");
-
-echo add(15, 5);
+echo $user1->name;
+echo $user1->email;
+print_r($user1);
