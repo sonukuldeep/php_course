@@ -1,11 +1,10 @@
 <?php
-// var_dump(getenv())
 
-putenv('DB_HOST=localhost');
-putenv('DB_USER=root');
+echo isset($_GET["name"]) ? $_GET["name"] : "";
 
-$host = getenv('DB_HOST');
-$user = getenv('DB_USER');
+echo $_GET["name"] ?? "";
+
+echo htmlspecialchars($_GET["name"] ?? "");
 
 ?>
 
@@ -25,11 +24,11 @@ $user = getenv('DB_USER');
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
             <div class="bg-gray-200 p-4 rounded-lg">
-                <strong class="block mb-2">DB Host: <?= $host ?></strong>
+                <strong class="block mb-2">DB Host:</strong>
 
             </div>
             <div class="bg-gray-200 p-4 rounded-lg">
-                <strong class="block mb-2">DB User: <?= $user ?></strong>
+                <strong class="block mb-2">DB User:</strong>
 
             </div>
 
