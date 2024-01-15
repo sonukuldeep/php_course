@@ -1,7 +1,3 @@
 <?php
 
-session_start();
-
-$_SESSION['name'] = 'John';
-
-print_r($_SESSION);
+setcookie('username', 'jdoe', time() + 3600, '/');
