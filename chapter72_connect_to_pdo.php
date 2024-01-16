@@ -1,4 +1,5 @@
 <?php
+// index.php
 
 //  database creds
 $host = 'localhost';
