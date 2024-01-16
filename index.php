@@ -10,9 +10,9 @@ $stmt->execute();
 // Fetch results
 $posts = $stmt->fetchAll();
 
-echo '<pre>';
-var_dump($results);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($results);
+// echo '</pre>';
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +36,7 @@ echo '</pre>';
             <div class="md my-4">
                 <div class="rounded-lg shadow-md">
                     <div class="p-4">
-                        <h2 class="text-xl font-semibold"><?= $post['title'] ?></h2>
+                        <h2 class="text-xl font-semibold"><a href="post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></h2>
                         <p class="text-gray-700 text-lg mt-2"><?= $post['body'] ?></p>
                     </div>
                 </div>
