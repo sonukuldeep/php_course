@@ -1,21 +1,56 @@
 <?php
+require "chapter72_connect_to_pdo.php";
 
-//  database creds
-$host = 'localhost';
-$port = 3306;
-$dbName = 'blog';
-$username = 'sonu';
-$password = 'sonu';
+// Prepare a select statement
+$stmt = $pdo->prepare('SELECT * FROM posts');
 
-$dsn = "mysql:host={$host};port={$port};dbname={$dbName};charset=utf8";
-try {
-    // create pdo instance
-    $pdo = new PDO($dsn, $username, $password);
+// Execute the statement
+$stmt->execute();
 
-    // set pdo to throw exceptions on error
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// Fetch results
+$posts = $stmt->fetchAll();
 
-    echo 'Database connected...';
-} catch (PDOException $e) {
-    echo 'connection failed' . $e->getMessage();
-}
+echo '<pre>';
+var_dump($results);
+echo '</pre>';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Blog</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white p-4">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-semibold">My Blog</h1>
+        </div>
+    </header>
+    <div class="container mx-auto p-4 mt-4">
+        <?php foreach ($posts as $post) : ?>
+            <div class="md my-4">
+                <div class="rounded-lg shadow-md">
+                    <div class="p-4">
+                        <h2 class="text-xl font-semibold"><?= $post['title'] ?></h2>
+                        <p class="text-gray-700 text-lg mt-2"><?= $post['body'] ?></p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="md my-4">
+            <div class="rounded-lg shadow-md">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold">Post Two</h2>
+                    <p class="text-gray-700 text-lg mt-2">This is post two</p>
+                </div>
+            </div>
+        </div> -->
+        <?php endforeach; ?>
+    </div>
+</body>
+
+</html>
